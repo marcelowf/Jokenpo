@@ -29,6 +29,7 @@ while contador == 0:
 1 = Pedra
 2 = Papel
 3 = Tesoura""")
+#desenvolvimento
     if modalidade == 1:
         a = int(input("jogador 1 escolha sua jogada: "))
         while a > 3 or a < 1:
