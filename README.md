@@ -1,72 +1,28 @@
 # Jokenpo
-#game
-#import´s
-from random import randint
-from time import sleep
-#resultados
-matriz = [[0], ["Pedra"], ["Papel"], ["Tesoura"]]
-def resultado(a, b):
-    if a == 2 and b == 1 or a == 1 and b == 3 or a == 3 and b == 2:
-        return print("O JOGADOR 1 GANHOU!")
-    elif a == b:
-        return print("EMPATE!")
-    else:
-        return print("O JOGADOR 2 GANHOU!")
-# apresentação para o usuário
-contador = 0
-print("JOKENPO!!!")
-sleep(0.5)
-while contador == 0:
-    print("=-" * 25)
-    print("""QUAL MODALIDADE VOCÊ ESCOLHE PARA JOGAR?
-1 = Usuário X Usuário
-2 = Usuário X Computador
-3 = Computador X Computador""")
-    modalidade = int(input("resposta: "))
-    while modalidade > 3 or modalidade < 1:
-        modalidade = int(input("resposta invalida, insira um valor valido: "))
-        print("""JOGADAS POSSIVEIS:
-1 = Pedra
-2 = Papel
-3 = Tesoura""")
-#desenvolvimento
-    if modalidade == 1:
-        a = int(input("jogador 1 escolha sua jogada: "))
-        while a > 3 or a < 1:
-            a = int(input("jogador 1 escolha sua jogada: "))
-        b = int(input("jogador 2 escolha sua jogada: "))
-        while b > 3 or b < 1:
-            b = int(input("jogador 2 escolha sua jogada: "))
-        print("o jogador 1 jogou:", matriz[a],"e o jogador 2 jogou:",matriz[b])
-        sleep(0.5)
-        print("=-" * 25)
-        resultado(a, b)
-    elif modalidade == 2:
-        a = int(input("escolha sua jogada: "))
-        while a > 3 or a < 1:
-            a = int(input("jogador 1 escolha sua jogada: "))
-        b = randint(1, 3)
-        print("o jogador 1 jogou:", matriz[a],"e o jogador 2 jogou:",matriz[b])
-        sleep(0.5)
-        print("=-" * 25)
-        resultado(a, b)
-    else:
-        a = randint(1, 3)
-        b = randint(1, 3)
-        print("o jogador 1 jogou:", matriz[a],"e o jogador 2 jogou:",matriz[b])
-        sleep(0.5)
-        print("=-" * 25)
-        resultado(a, b)
-    escolha = int(input("""Deseja continuar jogando?
-{1} = sim   {2} = não 
-escolha: """))
-    while escolha > 2 or escolha < 1:
-        escolha = int(input("resposta invalida, insira um valor valido: "))
-    if escolha == 1:
-        sleep(1)
-        print("reniciando...")
-        sleep(2)
-    else:
-        contador += 1
-print("Muito obrigado por jogar meu jogo!")
-sleep(3)
+
+Este é um simples jogo de pedra, papel e tesoura (Jokenpo) implementado em Python. O jogo oferece três modalidades de jogo: Usuário X Usuário, Usuário X Computador e Computador X Computador.
+
+## Funcionalidades
+
+- **Usuário X Usuário**: Permite que dois jogadores façam suas jogadas.
+- **Usuário X Computador**: Permite que um jogador faça uma jogada, enquanto o computador faz a outra.
+- **Computador X Computador**: Permite que dois jogadores automáticos façam suas jogadas.
+
+## Como Jogar
+
+1. Execute o script Python `jokenpo.py`.
+2. Escolha a modalidade de jogo desejada (1, 2 ou 3).
+3. Faça suas jogadas de acordo com as instruções.
+4. O resultado da rodada será exibido, indicando se houve empate ou qual jogador ganhou.
+5. Você pode optar por continuar jogando ou encerrar o jogo.
+
+## Estrutura do Projeto
+
+- `jokenpo.py`: O script principal contendo o código do jogo.
+- Funções modulares para obter jogadas, realizar jogadas do computador e determinar o resultado.
+- Utilização de listas para representar as jogadas possíveis.
+
+## Execução
+
+```bash
+python jokenpo.py
